@@ -416,6 +416,52 @@ bmap(struct inode *ip, uint bn)
     brelse(bp);
     return addr;
   }
+  bn -= NINDIRECT;
+
+  // Doubly-indirect blocks
+  if (bn < NDOUBLY_INDIRECT) {
+    uint level1_idx = bn / NINDIRECT;
+    uint level2_idx = bn % NINDIRECT;
+
+    if ((addr = ip->addrs[NDIRECT + 1]) == 0) {
+      addr = balloc(ip->dev);
+      if (addr == 0)
+        return 0;
+      ip->addrs[NDIRECT + 1] = addr;
+    }
+
+    // Read doubly-indirect root block; entries point to singly-indirect blocks
+    bp = bread(ip->dev, addr);
+    a = (uint*) bp->data;
+
+    uint addr2;
+    if ((addr2 = a[level1_idx]) == 0) {
+      addr2 = balloc(ip->dev);
+      if (addr2 == 0) {
+        brelse(bp);
+        return 0;
+      }
+      a[level1_idx] = addr2;
+      log_write(bp);
+    }
+    brelse(bp);
+
+    // Read second level singly-indirect block; entries point to data blocks
+    struct buf *bp2 = bread(ip->dev, addr2);
+    uint *a2 = (uint*) bp2->data;
+
+    if ((addr = a2[level2_idx]) == 0) {
+      addr = balloc(ip->dev);
+      if (addr == 0) {
+        brelse(bp2);
+        return 0;
+      }
+      a2[level2_idx] = addr;
+      log_write(bp2);
+    }
+    brelse(bp2);
+    return addr;
+  }
 
   panic("bmap: out of range");
 }
