@@ -18,6 +18,7 @@ Nhánh này chứa mã nguồn thực hiện các yêu cầu của phần 4.1: P
 Để biên dịch và chạy XV6, cần chuẩn bị môi trường trên Ubuntu (hoặc WSL).
 
 **Bước 1: Cài đặt các công cụ cần thiết**
+
 Mở terminal và chạy các lệnh sau:
 ```bash
 sudo apt update
