@@ -46,13 +46,13 @@ Khởi tạo và chạy xv6:
 make clean
 make qemu
 ```
-Trong môi trường xv6, chạy lệnh sau để test Task 1:
+Trong môi trường xv6, chạy lệnh sau để test Speed up system calls:
 ```bash
 pgtbltest
 test_usyscall
 ```
 
-Để test Task 2:
+Để test Print a page table:
 ```bash
 make grade
 ```
