@@ -1,4 +1,3 @@
-```markdown
 # ĐỒ ÁN 2: PAGE TABLE VÀ FILE SYSTEM
 
 **## 1. Thông tin chung**
