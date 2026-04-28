@@ -1,6 +1,6 @@
 # ĐỒ ÁN 2: PAGE TABLE VÀ FILE SYSTEM
 
-**## 1. Thông tin chung**
+## 1. Thông tin chung
 - **Môn học:** Hệ điều hành  
 - **Môi trường:** Linux
 
@@ -10,7 +10,7 @@
 
 ---
 
-**## 2. Thành viên nhóm**
+## 2. Thành viên nhóm
 
 | STT | Họ và tên | MSSV | Công việc | Hoàn thành |
 |:--:|:--|:--:|:--|:--:|
@@ -20,7 +20,7 @@
 
 ---
 
-**## 3. Chức năng chính đã cài đặt**
+## 3. Chức năng chính đã cài đặt
 
 ### Phần 1: Page Table (Nhánh `pgtbl`)
 - **Speed up system calls:** Tối ưu hóa lời gọi hệ thống `getpid()` bằng cách chia sẻ dữ liệu trong vùng read-only giữa userspace và kernel.
@@ -31,7 +31,7 @@
 
 ---
 
-**## 4. Hướng dẫn Cài đặt & Môi trường**
+## 4. Hướng dẫn Cài đặt & Môi trường
 
 Để biên dịch và chạy XV6, cần chuẩn bị môi trường trên Ubuntu (hoặc WSL).
 
@@ -43,6 +43,7 @@ sudo apt install build-essential
 sudo apt install gcc-riscv64-linux-gnu
 sudo apt install binutils-riscv64-linux-gnu
 sudo apt install qemu-system-misc
+```
 
 **Bước 2: Lấy source code XV6**
 ```bash
@@ -101,7 +102,7 @@ usertests
 ```
 ---
 
-## 7. Tài liệu tham khảo
+## 6. Tài liệu tham khảo
 - Sách xv6 (xv6 Book).
 - Tài liệu lý thuyết và thực hành môn học (Moodle).
 ---
