@@ -12,8 +12,8 @@
 
 **## 2. Thành viên nhóm**
 
-| STT | Họ và tên | MSSV |
-|:--:|:--|:--:|
+| STT | Họ và tên | MSSV | Công việc | Hoàn thành |
+|:--:|:--|:--:|:--|:--:|
 | 1 | Hồ Thị Như Ngọc | 24127089 | `speed up system calls`, README, báo cáo | 100% |
 | 2 | Phan Đình Minh Quân | 24127517 | `file system` | 100% |
 | 3 | Lê Thị Như Ý | 24127595 | `print a page table`, GitHub | 100% |
