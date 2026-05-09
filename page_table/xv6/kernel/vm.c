@@ -474,7 +474,7 @@ _vmprint(pagetable_t pagetable, int level, uint64 va)
       }
 
       uint64 pa = PTE2PA(pte);
-      printf("%p pte %p pa %p\n", i, (void *)pte, (void *)pa);
+      printf("%d: pte %p pa %p\n", i, (void *)pte, (void *)pa);
 
       if(level > 0 && (pte & (PTE_R|PTE_W|PTE_X)) == 0){
         _vmprint((pagetable_t)PTE2PA(pte), level - 1, cur_va);
